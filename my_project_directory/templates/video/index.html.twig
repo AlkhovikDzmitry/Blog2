@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Мои видео{% endblock %}
+{% block main_cont %}
+
+
+<h1>Show Video</h1>
+    <div class = "grid">
+        {% for video in videos %}
+        
+        <div class="grid_item">
+       
+       <h4><a href = "{{path('show_video', {youtoube_id: video.youtoubeId}) }}"> {{ video.title }}</a></h4><br> 
+          
+                <iframe width = "350" height = "197" src = "https://www.youtube.com/embed/{{video.youtoubeId}}" frameborder = "0" allowe = "accelerometr; autoplay; encrypted-media; gyroscope; picture-in-picture"</iframe>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Категории{% endblock %}
+{% block main_cont %}
+
+<h1>Show Category</h1>
+
+<ul>
+{% for category in categories %}
+
+    <li><a href = "{{path('show_video_by_cat', {'category_id': category.id}) }}">{{category.title}}</a></li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
